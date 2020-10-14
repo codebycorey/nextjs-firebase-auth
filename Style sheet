@@ -1,0 +1,38 @@
+body,
+html {
+  height: 100%;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif; 
+ /* Change this to your font */
+  line-height: 1.5em;
+  margin: 0em;
+  color: white;
+  background-color: #5A1C85;
+  box-sizing: border-box;
+}
+
+h1 {
+  letter-spacing: 3px;
+  font-size: 10px;
+  font-family: 'Roboto Mono', monospace; /* Change this to your font */
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  letter-spacing: 3px;
+  font-size: 25px;
+  font-family: "Roboto Mono", sans-serif; /* Change this to your font */
+  color: #43d6b9ff;
+  text-align: center;
+  line-height: 1.3em;
+}
+
+a{
+  color: #43d6b9ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f4364c;
+}
