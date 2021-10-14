@@ -18,16 +18,20 @@ export default function Dashboard() {
   const { data } = useSWR(auth ? ['/api/user', auth.token] : null, fetcher);
 
   return (
-    <div>
-      <p>Dashboard: Hello World</p>
+    <main>
+      <h1>Dashboard</h1>
+      <p>Hello World 👋</p>
       {auth && (
         <div>
           <button onClick={() => signOut()}>Sign Out</button>
         </div>
       )}
       {data && (
-        <p>USER RESPONSE: {JSON.stringify(data)}</p>
+        <>
+          <p>USER RESPONSE:</p>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
+        </>
       )}
-    </div>
+    </main>
   );
 }

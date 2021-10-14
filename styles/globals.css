@@ -1,16 +1,126 @@
-html,
+::selection {
+  background: var(--text-selection-color);
+}
+
+html {
+  font-size: 62.5%;
+}
 body {
-  padding: 0;
+  --black: #000;
+  --blue: #0070f3;
+  --white: #fff;
+  --pink: #ff0080;
+  --grey: #888;
+
+  --mg-b: 2rem;
+
+  --default-ff: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --bg-color: var(--black);
+    --text-color: var(--grey);
+    --text-selection-color: var(--pink);
+    --title-color: var(--white);
+    --button-hover-bg-color: var(--black);
+  }
+  body.opposite-theme {
+    --bg-color: var(--white);
+    --text-color: #666;
+    --text-selection-color: #50e3c2;
+    --title-color: var(--black);
+    --button-hover-bg-color: var(--white);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    --bg-color: var(--white);
+    --text-color: #666;
+    --text-selection-color: #50e3c2;
+    --title-color: var(--black);
+    --button-hover-bg-color: var(--white);
+  }
+  body.opposite-theme {
+    --bg-color: var(--black);
+    --text-color: var(--grey);
+    --text-selection-color: var(--pink);
+    --title-color: var(--white);
+    --button-hover-bg-color: var(--black);
+  }
+}
+
+body,
+html {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--default-ff);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+main {
+  font-size: 2rem;
+  margin: 0 auto;
+  max-width: 900px;
+  min-height: 100vh;
+  overflow: auto;
+  padding: 2rem 2.5rem;
+}
+
+header {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+@media (min-width: 730px) {
+  header {
+    right: 4rem;
+  }
+}
+
+h1 {
+  color: var(--title-color);
+  font-size: 4rem;
 }
 
 a {
-  color: inherit;
+  color: var(--blue);
+  cursor: pointer;
   text-decoration: none;
 }
+a:hover {
+  text-decoration: underline var(--blue);
+}
 
-* {
-  box-sizing: border-box;
+p {
+  margin-bottom: var(--mg-b);
+}
+
+button {
+  background-color: var(--blue);
+  border-radius: 5px;
+  border: 1px solid var(--blue);
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--default-ff);
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  padding: 12px;
+  transition: background-color 0.2s;
+  margin: 1rem 0;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+body.opposite-theme button:hover {
+  color: var(--blue);
+}
+
+pre {
+  color: var(--title-color);
 }
