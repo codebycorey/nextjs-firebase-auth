@@ -6,24 +6,28 @@ export default function Home() {
   const { auth, signOut, signInWithTwitter } = useAuth();
 
   return (
-    <div>
+    <>
       <Head>
         <title>Next.js with Firebase Auth</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {auth ? (
-        <div>
-          <Link href="/dashboard">
-            <a>Dashboard link.</a>
-          </Link>
+      <main>
+        <h1>Home</h1>
+        {auth ? (
           <div>
-            <button onClick={() => signOut()}>Sign Out</button>
+            <Link href="/dashboard">
+              <p>
+                <a>Go to Dashboard →</a>
+              </p>
+            </Link>
+            <div>
+              <button onClick={() => signOut()}>Sign Out</button>
+            </div>
           </div>
-        </div>
-      ) : (
-        <button onClick={() => signInWithTwitter()}>Sign In</button>
-      )}
-    </div>
+        ) : (
+          <button onClick={() => signInWithTwitter()}>Sign In</button>
+        )}
+      </main>
+    </>
   );
 }
